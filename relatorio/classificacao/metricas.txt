@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+   Minúscula       0.97      0.99      0.98       190
+   Maiúscula       0.99      0.98      0.98       210
+
+    accuracy                           0.98       400
+   macro avg       0.98      0.98      0.98       400
+weighted avg       0.98      0.98      0.98       400

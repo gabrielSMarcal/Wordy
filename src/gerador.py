@@ -4,18 +4,18 @@ import random
 import string
 
 class GeradorLetraImagem:
-    """
+    '''
     Classe responsável por gerar imagens sintéticas de letras.
-    """
+    '''
     
     def __init__(self,  tamanho_img=32):
         self.tamanho_img = tamanho_img
         self.font = cv2.FONT_HERSHEY_SIMPLEX
         
     def _gerar_letra(self, letra, tamanho_fonte=1.0, espessura=2):
-        """
+        '''
         Gera uma imagem de uma única letra com ruído.
-        """
+        '''
         
         img = np.zeros((self.tamanho_img, self.tamanho_img), dtype=np.uint8)
         
@@ -33,9 +33,9 @@ class GeradorLetraImagem:
         return img
     
     def criar_dataset(self, num_amostras=2000):
-        """
+        '''
         Cria um dataset de letras maiúsculas e minúsculas.
-        """
+        '''
         
         x = []
         y = []

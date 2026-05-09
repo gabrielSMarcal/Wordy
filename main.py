@@ -7,16 +7,16 @@ from src.reporte import GeradorReporte
 TAMANHO_IMAGEM = 32
 
 def main():
-    print("Iniciando o processo de classificação de letras...")
+    print('Iniciando o processo de classificação de letras...')
     
     # 1. Geração de Dados
     gerador = GeradorLetraImagem(tamanho_img=TAMANHO_IMAGEM)
     X, y = gerador.criar_dataset(num_amostras=2000)
-    print(f"Dataset gerado: {len(X)} amostras.")
+    print(f'Dataset gerado: {len(X)} amostras.')
     
     # 2. Divisão em treino e teste
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=642)
-    print(f"Dados divididos: {len(X_train)} para treino e {len(X_test)} para teste.")
+    print(f'Dados divididos: {len(X_train)} para treino e {len(X_test)} para teste.')
     
     # 3. Treinamento do modelo
     classificador = Classificador()
@@ -24,7 +24,7 @@ def main():
     
     # 4. Previsão
     y_pred = classificador.prever(X_test)
-    print("Previsões realizadas.")
+    print('Previsões realizadas.')
     
     # 5. Geração de Relatórios e Visualizações
     reporte = GeradorReporte(tamanho_img=TAMANHO_IMAGEM)
@@ -39,7 +39,8 @@ def main():
     # Matriz de Confusão
     caminho_matriz = reporte.salvar_matriz_confusao(y_test, y_pred)
     
-    print(f"\nProcesso concluído. Verifique os arquivos gerados nos seguintes locais:\n- Relatório de Classificação: {caminho_reporte}\n- Imagens de Exemplo: {caminho_exemplo}\n- Matriz de Confusão: {caminho_matriz}")
+    print(f'\nProcesso concluído. Verifique os arquivos gerados nos seguintes locais:\n- Relatório de Classificação: {caminho_reporte}')
+    print(f'- Imagens de Exemplo: {caminho_exemplo}\n- Matriz de Confusão: {caminho_matriz}')
     
 if __name__ == '__main__':
     main()
