@@ -4,6 +4,8 @@ from src.gerador import GeradorLetraImagem
 from src.classificador import Classificador
 from src.reporte import GeradorReporte
 
+import os
+
 TAMANHO_IMAGEM = 32
 
 def main():
@@ -41,6 +43,10 @@ def main():
     
     print(f'\nProcesso concluído. Verifique os arquivos gerados nos seguintes locais:\n- Relatório de Classificação: {caminho_reporte}')
     print(f'- Imagens de Exemplo: {caminho_exemplo}\n- Matriz de Confusão: {caminho_matriz}')
+    
+    # Abertura do arquivo de exemplo
+    if os.path.exists(caminho_exemplo):
+        os.startfile(caminho_exemplo)
     
 if __name__ == '__main__':
     main()
